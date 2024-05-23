@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor de Unidades</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Convertidor de Unidades</h1>
+
+        <div class="converter">
+            <select id="measurementType" onchange="updateUnits()">
+                <option value="length">Longitud</option>
+                <option value="mass">Masa</option>
+                <option value="speed">Velocidad</option>
+            </select>
+            <input type="number" id="inputValue" placeholder="Ingresa valor">
+            <select id="inputUnit"></select>
+            <select id="outputUnit"></select>
+            <button onclick="convert()">Convertir</button>
+           <p id="result"></p>
+        </div>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+</html>
