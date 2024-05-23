@@ -1,4 +1,3 @@
-//unidades de medidas
 const lengthUnits = {
     kilómetros: 1000,
     metros: 1,
@@ -74,7 +73,10 @@ function convert() {
     // Determinar el número de decimales necesarios
     const decimalPlaces = Math.max(2, (inputValue.toString().split('.')[1] || '').length, (outputValue.toString().split('.')[1] || '').length);
 
-    document.getElementById('result').textContent = `${inputValue} ${inputUnit} son ${outputValue.toFixed(decimalPlaces)} ${outputUnit}`;
+    // Formatear el valor de salida para mostrar todos los decimales necesarios
+    const formattedOutputValue = outputValue.toFixed(decimalPlaces).replace(/\.?0+$/, '');
+
+    document.getElementById('result').textContent = `${inputValue} ${inputUnit} son ${formattedOutputValue} ${outputUnit}`;
 }
 
 document.getElementById('measurementType').addEventListener('change', updateUnits);
